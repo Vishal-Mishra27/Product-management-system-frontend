@@ -55,7 +55,7 @@ const Bill3 = () => {
   const fetchProduct = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/product/api/getProduct"
+        "https://product-management-system-mjfo.onrender.com/api/product/api/getProduct"
       );
       setGetProduct(response.data.message);
     } catch (error) {
@@ -110,66 +110,8 @@ const Bill3 = () => {
     e.preventDefault();
     console.log("i am submitted");
     console.log(sellForm);
-    // try {
-    //   const res = await axios.post(
-    //     "http://localhost:3000/api/sell/api/sellitem",
-    //     sellForm
-    //   );
-    //   console.log(res);
-    //   setSellForm({
-    //     customerName: "",
-    //     productName: "",
-    //     quantity: "",
-    //     price: "",
-    //     totalPrice: "",
-    //     finalPrice: "",
-    //   });
-    // } catch (error) {
-    //   console.log(error);
-    // }
   };
-//   ------------------------------------------------------------------------------------------------------------
-//     useEffect(() => {
-//       calculateTotals();
-//     }, [sellForm]);
 
-// const [calculations, setCalculations] = useState({
-//   totalPrice: 0,
-//   gstAmount: 0,
-//   discountAmount: 0,
-//   grandTotal: 0,
-// });
-
-
-// console.log("sellForm.products:", sellForm);
-
-
-//     const calculateTotals = () => {
-//       const totalPrice = sellForm.finalPrice.reduce(
-//         (sum, product) => sum + product.quantity * product.unitPrice,
-//         0
-//       );
-
-//       const gstRate = (sellForm.sgstRate + sellForm.cgstRate) / 100;
-//       const gstAmount = totalPrice * gstRate;
-
-//       let discountAmount = 0;
-//       if (sellForm.discountType === "percentage") {
-//         discountAmount =
-//           (totalPrice * Math.min(sellForm.discountValue, 20)) / 100;
-//       } else {
-//         discountAmount = Math.min(sellForm.discountValue, totalPrice * 0.2);
-//       }
-
-//       const grandTotal = totalPrice + gstAmount - discountAmount;
-
-//       setCalculations({
-//         totalPrice,
-//         gstAmount,
-//         discountAmount,
-//         grandTotal,
-//       });
-//     };
 
   const [taxRates, setTaxRates] = useState({ sgst: 0, cgst: 0, totalTax: 0 });
 const [amount, setAmount] = useState(sellForm.totalPrice || 0);
@@ -225,7 +167,7 @@ useEffect(() => {
     const fetchSellData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/sell/api/getsellitem"
+          "https://product-management-system-mjfo.onrender.com/api/sell/api/getsellitem"
         );
         console.log(response.data.message);
         setGetSell(response.data.message);

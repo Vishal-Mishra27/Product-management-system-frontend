@@ -49,7 +49,9 @@ const Product = () => {
   };
   const fetchVender = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/addNewVender");
+      const res = await axios.get(
+        "https://product-management-system-mjfo.onrender.com/api/addNewVender"
+      );
       console.log(res.data.message);
       setAddvender(res.data.message);
     } catch (error) {
@@ -74,7 +76,7 @@ const Product = () => {
     console.log("ProductDetails: ", ProductDetails);
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/product/api/postProduct",
+        "https://product-management-system-mjfo.onrender.com/api/product/api/postProduct",
         ProductDetails
       );
       console.log(res.data);

@@ -23,7 +23,10 @@ function Vender() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/api/addNewVender", venderForm);
+      await axios.post(
+        "https://product-management-system-mjfo.onrender.com/api/addNewVender",
+        venderForm
+      );
       setVenderDashboard(false);
       SetVenderForm({ name: "", mobile: "" });
       // alert("Vender Added Successfully...!");
@@ -38,7 +41,9 @@ function Vender() {
   //get
   const fetchVender = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/addNewVender");
+      const res = await axios.get(
+        "https://product-management-system-mjfo.onrender.com/api/addNewVender"
+      );
       console.log(res.data.message)
       setAddvender(res.data.message);
       setAllProduct(true);
@@ -54,7 +59,9 @@ function Vender() {
 
   //delete
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3000/api/DeleteVender${id}`);
+    await axios.delete(
+      `https://product-management-system-mjfo.onrender.com/api/DeleteVender${id}`
+    );
     fetchVender();
   };
 

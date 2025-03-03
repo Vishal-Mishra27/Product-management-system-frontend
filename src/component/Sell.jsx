@@ -38,7 +38,9 @@ const Sell = () => {
   // Fetch Product Data
   const fetchProduct = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/product/api/getProduct");
+      const response = await axios.get(
+        "https://product-management-system-mjfo.onrender.com/api/product/api/getProduct"
+      );
       setGetProduct(response.data.message);
     } catch (error) {
       console.error(error);
@@ -87,7 +89,10 @@ const Sell = () => {
     console.log("i am submitted");
     console.log(sellForm)
     try{
-      const res=await axios.post("http://localhost:3000/api/sell/api/sellitem",sellForm)
+      const res = await axios.post(
+        "https://product-management-system-mjfo.onrender.com/api/sell/api/sellitem",
+        sellForm
+      );
       console.log(res)
       setSellForm({
         customerName: "",

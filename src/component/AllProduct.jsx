@@ -68,7 +68,7 @@ const AllProduct = () => {
   const fetchAllProduct = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/product/api/getProduct"
+        "https://product-management-system-mjfo.onrender.com/api/product/api/getProduct"
       );
       console.log(response.data.message);
       setgetAllProduct(response.data.message);
@@ -94,7 +94,7 @@ const AllProduct = () => {
 
   const handleDelete = async (id) => {
     await axios.delete(
-      `http://localhost:3000/deleteProduct/deleteProduct${id}`
+      `https://product-management-system-mjfo.onrender.com/deleteProduct/deleteProduct${id}`
     );
     fetchAllProduct();
     toast.success("Product Delete Successfully");
@@ -135,7 +135,7 @@ const AllProduct = () => {
       console.log("ProductDetails: ", ProductDetails);
       console.log("userid: ", currentId);
       const res = await axios.put(
-        `http://localhost:3000/api/editProduct/api/editProductitem/${currentId}`,
+        `https://product-management-system-mjfo.onrender.com/api/editProduct/api/editProductitem/${currentId}`,
         ProductDetails
       );
       console.log(res);
@@ -149,7 +149,9 @@ const AllProduct = () => {
 
   const fetchVender = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/addNewVender");
+      const res = await axios.get(
+        "https://product-management-system-mjfo.onrender.com/api/addNewVender"
+      );
       console.log(res.data.message);
       setAddvender(res.data.message);
     } catch (error) {
