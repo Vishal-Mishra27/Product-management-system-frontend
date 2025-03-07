@@ -641,7 +641,14 @@ const AllSell = () => {
                       <h2 className="md:text-lg font-bold mb-4 text-center">
                         Edit Sell Product
                       </h2>
-
+                      <button
+                        onClick={() => {
+                          setIsEditMode(false);
+                        }}
+                        className="absolute top-4 right-4 mb-6 text-right cursor-pointer"
+                      >
+                        <X size={24} />
+                      </button>
                       <label className="block text-gray-600 font-semibold mb-2">
                         Customer Name
                       </label>
